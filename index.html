@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лента публикаций</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <h1>Лента публикаций</h1>
+            <p class="subtitle">Клиент REST API</p>
+        </header>
+
+        <section class="block">
+            <h2>Новая публикация</h2>
+            <form id="post-form" novalidate>
+                <div class="row">
+                    <label for="post-title">Заголовок</label>
+                    <input id="post-title" type="text" autocomplete="off">
+                </div>
+                <div class="row">
+                    <label for="post-body">Содержимое</label>
+                    <textarea id="post-body" rows="4"></textarea>
+                </div>
+                <button id="send-btn" type="submit">Опубликовать</button>
+            </form>
+            <p id="send-status" class="msg" aria-live="polite"></p>
+        </section>
+
+        <section class="block">
+            <div class="feed-head">
+                <h2>Лента</h2>
+                <button id="fetch-btn" type="button">Обновить ленту</button>
+            </div>
+            <p id="fetch-status" class="msg" aria-live="polite"></p>
+            <div id="feed" class="feed"></div>
+        </section>
+    </div>
+</body>
+</html>
